@@ -1,0 +1,120 @@
+
+.div {
+  width: 90%; /* устанавливаем ширину элемента */
+  height: 90%; /* устанавливаем высоту элемента */
+  padding: 10px; /* устанавливаем внутренние отступы элемента */
+  border: 5px; /* устанавливаем границы элемента */
+  margin-right: -0.25em; /*убираем правый отступ между блоками*/
+}
+.div1 {
+  float: left; /*Задаем обтекание*/
+  width: 70%; /* устанавливаем ширину элемента */
+  height: 50%; /* устанавливаем высоту элемента */
+  padding: 10px; /* устанавливаем внутренние отступы элемента */
+  border: 5px; /* устанавливаем границы элемента */
+  margin-left: -10px;
+  display: inline-block; /*располагаем блоки в ряд по горизонтали*/
+}
+.div2 {
+  float: left; /*Задаем обтекание*/
+  background-color: #c9c9c4;
+  margin-top: 60px;
+  margin-right: 10px;
+  padding: 10px; /* устанавливаем внутренние отступы элемента */
+  border: 5px; /* устанавливаем границы элемента */
+  display: inline-block; /*располагаем блоки в ряд по горизонтали*/
+  font-size: 16px;
+
+}
+.div3 {
+  border-radius: 20px;
+  float: left; /*Задаем обтекание*/
+  text-align: center;
+  background-color: #c9c9c4;
+  width: 200px;
+  margin-top: 60px;
+  margin-right: 10px;
+  padding: 10px; /* устанавливаем внутренние отступы элемента */
+  border: 5px; /* устанавливаем границы элемента */
+  display: block; /*располагаем блоки в ряд по горизонтали*/
+  font-size: 16px;
+
+
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+}
+
+label > input[type="checkbox"] {
+  display: none;
+}
+label > input[type="checkbox"] + *::before {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 10%;
+  border-style: solid;
+  border-width: 0.2rem;
+  border-color: gray;
+  padding: 3px; /* устанавливаем внутренние отступы элемента */
+  margin-top: 10px;
+}
+
+label > input[type="checkbox"]:checked + *::before {
+  content: "✓";
+  color: white;
+  text-align: center;
+  background: teal;
+  border-color: teal;
+}
+label > input[type="checkbox"]:checked + * {
+  color: teal;
+}
+
+
+
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
