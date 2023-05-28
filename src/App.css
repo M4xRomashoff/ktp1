@@ -16,15 +16,17 @@
   display: inline-block; /*располагаем блоки в ряд по горизонтали*/
 }
 .div2 {
-  float: left; /*Задаем обтекание*/
+  width: 80%; /* устанавливаем ширину элемента */
+  border-radius: 20px;
+  /*float: right; !*Задаем обтекание*!*/
   background-color: #c9c9c4;
-  margin-top: 60px;
+  margin-top: 10px;
+  margin-left: 60px;
   margin-right: 10px;
   padding: 10px; /* устанавливаем внутренние отступы элемента */
   border: 5px; /* устанавливаем границы элемента */
   display: inline-block; /*располагаем блоки в ряд по горизонтали*/
   font-size: 16px;
-
 }
 .div3 {
   border-radius: 20px;
@@ -32,14 +34,26 @@
   text-align: center;
   background-color: #c9c9c4;
   width: 200px;
-  margin-top: 60px;
+  margin-top: 10px;
   margin-right: 10px;
   padding: 10px; /* устанавливаем внутренние отступы элемента */
   border: 5px; /* устанавливаем границы элемента */
   display: block; /*располагаем блоки в ряд по горизонтали*/
   font-size: 16px;
-
-
+}
+.div4 {
+  /*width: 80%; !* устанавливаем ширину элемента *!*/
+  /*border-radius: 20px;*/
+  /*float: right; !*Задаем обтекание*!*/
+  /*background-color: #c9c9c4;*/
+  /*margin-top: 10px;*/
+  /*margin-left: 60px;*/
+  /*margin-right: 10px;*/
+  /*padding: 10px; !* устанавливаем внутренние отступы элемента *!*/
+  /*border: 5px; !* устанавливаем границы элемента *!*/
+  display: inline-block; /*располагаем блоки в ряд по горизонтали*/
+  margin-left: 10px;
+  font-size: 16px;
 }
 
 label {
