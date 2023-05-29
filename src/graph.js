@@ -151,7 +151,8 @@ export default  function BuildGraph(){
                 >
                     {checked1 && (<VictoryGroup
                         color="#c43a31"
-                        labels={({ datum }) => `y: ${datum.y}`}
+                        labels={({ datum }) =>
+                            `температура: ${datum.y} \n время: ${new Date(datum.x).getHours()+':'+new Date(datum.x).getMinutes()}`}
                         labelComponent={<VictoryTooltip style={{ fontSize: 10 }} /> }
                         data={dataKtp1}
                     >
@@ -161,7 +162,7 @@ export default  function BuildGraph(){
 
                     {checked2 && (<VictoryGroup
                         color="#85e0b2"
-                        labels= {({ datum }) => `y: ${datum.y}`}
+                        labels= {({ datum }) => `температура: ${datum.y} \n время: ${new Date(datum.x).getHours()+':'+new Date(datum.x).getMinutes()}`}
                         labelComponent={<VictoryTooltip style={{ fontSize: 10 }} /> }
                         data={dataKtp2}
                     >
@@ -171,7 +172,7 @@ export default  function BuildGraph(){
 
                     {checked3 && (<VictoryGroup
                         color="#3a31c4"
-                        labels={({ datum }) => `y: ${datum.y}`}
+                        labels={({ datum }) => `температура: ${datum.y} \n время: ${new Date(datum.x).getHours()+':'+new Date(datum.x).getMinutes()}`}
                         labelComponent={<VictoryTooltip style={{ fontSize: 10 }} /> }
                         data={dataKtp3}
                     >
@@ -181,7 +182,7 @@ export default  function BuildGraph(){
 
                     {checked4 && (<VictoryGroup
                         color="#0e0403"
-                        labels= {({ datum }) => `y: ${datum.y}`}
+                        labels= {({ datum }) => `температура: ${datum.y} \n время: ${new Date(datum.x).getHours()+':'+new Date(datum.x).getMinutes()}`}
                         labelComponent={<VictoryTooltip style={{ fontSize: 10 }} /> }
                         data={dataKtp4}
                     >
@@ -191,7 +192,6 @@ export default  function BuildGraph(){
 
                     <VictoryAxis label=" Время (часы) "
                                  tickFormat={(x) => new Date(x).getHours() + ':' + new Date(x).getMinutes()}
-                                 //tickValues={[0,1,2, 3, 4, 5,6,7,8,9,14,15,16,17,18,19,20,21,22,23]}
                         />
 
                     <VictoryAxis dependentAxis
@@ -224,11 +224,15 @@ export default  function BuildGraph(){
                 <label> Текущие показания</label>
                 <label> Дата : {date} </label>
                 <label> Время : {time} </label>
-                <label> {boxList[0]} - {temp1} <sup>o</sup>C</label>
-                <label> {boxList[1]} - {temp2} <sup>o</sup>C</label>
-                <label> {boxList[2]} - {temp3} <sup>o</sup>C</label>
-                <label> {boxList[3]} - {temp4} <sup>o</sup>C</label>
+                <label> {boxList[0]} ( {temp1}  <sup>o</sup>C )</label>
+                <label> {boxList[1]} ( {temp2}  <sup>o</sup>C )</label>
+                <label> {boxList[2]} ( {temp3}  <sup>o</sup>C )</label>
+                <label> {boxList[3]} ( {temp4}  <sup>o</sup>C )</label>
             </div>
+            <div className={'div3'}>
+                <a href="http://localhost:5000/db/get_ktp_all_file" download>Данные за все время одним файлом</a>
+            </div>
+
         </div>
     )
 
