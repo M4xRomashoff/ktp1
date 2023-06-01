@@ -47,6 +47,7 @@ export default async function GetDataByDate(date,setDataktp1,setDataktp2,setData
         +((new Date(date).getMonth())+1).toString()+'-'
         +(new Date(date).getDate());
     const apiUrl =`http://localhost:5000/db/get_ktp_date/${newDate}`;
+    //const apiUrl =`http://192.168.0.35:5000/db/get_ktp_date/${newDate}`;
     axios.get(apiUrl)
         .then((resp) => {
             const data = resp.data;

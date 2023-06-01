@@ -87,6 +87,7 @@ export default  function BuildGraph(){
         let data1 = [];
         let dataItem = {x:'00:00', y : 20};
         const apiUrl = `http://localhost:5000/db/get_ktp_all`;
+        //const apiUrl = `http://192.168.0.35:5000/db/get_ktp_all`;
             axios.get(apiUrl)
             .then((resp) => {
               const data = resp.data;
@@ -157,7 +158,7 @@ export default  function BuildGraph(){
                         data={dataKtp1}
                     >
                         <VictoryLine/>
-                        <VictoryScatter size={({ active }) => active ? 8 : 6} />
+                        <VictoryScatter size={({ active }) => active ? 4 : 2} />
                     </VictoryGroup>)}
 
                     {checked2 && (<VictoryGroup
@@ -167,7 +168,7 @@ export default  function BuildGraph(){
                         data={dataKtp2}
                     >
                         <VictoryLine/>
-                        <VictoryScatter size={({ active }) => active ? 8 : 6} />
+                        <VictoryScatter size={({ active }) => active ? 8 : 2} />
                     </VictoryGroup>)}
 
                     {checked3 && (<VictoryGroup
@@ -177,7 +178,7 @@ export default  function BuildGraph(){
                         data={dataKtp3}
                     >
                         <VictoryLine/>
-                        <VictoryScatter size={({ active }) => active ? 8 : 6} />
+                        <VictoryScatter size={({ active }) => active ? 8 : 2} />
                     </VictoryGroup>)}
 
                     {checked4 && (<VictoryGroup
@@ -187,7 +188,7 @@ export default  function BuildGraph(){
                         data={dataKtp4}
                     >
                         <VictoryLine/>
-                        <VictoryScatter size={({ active }) => active ? 8 : 6} />
+                        <VictoryScatter size={({ active }) => active ? 8 : 2} />
                     </VictoryGroup>)}
 
                     <VictoryAxis label=" Время (часы) "
