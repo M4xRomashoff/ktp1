@@ -5,7 +5,6 @@ import {Graph} from "./graph";
 
 
 
-
 function App() {
   return (
     <div className="App">

@@ -86,9 +86,12 @@ export default  function BuildGraph(){
     useEffect(() => {
         let data1 = [];
         let dataItem = {x:'00:00', y : 20};
-        const apiUrl = `http://localhost:5000/db/get_ktp_all`;
+        const apiUrl1 = `http://192.168.60.197:5000/db/get_ktp_all`;
+        const apiUrl2 = `http://localhost:5000/db/get_ktp_all`;
+        //const apiUrl = `http://192.168.0.89:5000/db/get_ktp_all`;
+        //const apiUrl = `http://localhost:5000/db/get_ktp_all`;
         //const apiUrl = `http://192.168.0.35:5000/db/get_ktp_all`;
-            axios.get(apiUrl)
+            axios.get(apiUrl1)
             .then((resp) => {
               const data = resp.data;
 
@@ -100,28 +103,51 @@ export default  function BuildGraph(){
                           +((new Date(data[data.length-1].date_time).getMonth())+1).toString()+'-'
                            +(new Date(data[data.length-1].date_time).getFullYear()) ;
                 setDate(today);
-
-
                 setDate1(getDataFromServer(data[data.length-1].date_time));
-
                 setTime(new Date(data[data.length-1].date_time).getHours()+':'
                              +new Date(data[data.length-1].date_time).getMinutes());
-
                 data.map((item) => {
                     dataItem = {x:item.date_time, y:item.temperature1};
                     data1.push(dataItem);
                     let nd=new Date(item.date_time).getDate();
                     console.log('nd',nd);
                 });
-
                 setDataktp1(getKtp1Data(data));
                 setDataktp2(getKtp2Data(data));
                 setDataktp3(getKtp3Data(data));
                 setDataktp4(getKtp4Data(data));
-
             })
             .catch(err => {
-                console.log('---ERROR---',err);
+                console.log('---ERROR--1 -',err);
+                axios.get(apiUrl2)
+                    .then((resp) => {
+                        const data = resp.data;
+
+                        setTemp1(data[data.length-1].temperature1);
+                        setTemp2(data[data.length-1].temperature2);
+                        setTemp3(data[data.length-1].temperature3);
+                        setTemp4(data[data.length-1].temperature4);
+                        let today = (new Date(data[data.length-1].date_time).getDate()) +'-'
+                            +((new Date(data[data.length-1].date_time).getMonth())+1).toString()+'-'
+                            +(new Date(data[data.length-1].date_time).getFullYear()) ;
+                        setDate(today);
+                        setDate1(getDataFromServer(data[data.length-1].date_time));
+                        setTime(new Date(data[data.length-1].date_time).getHours()+':'
+                            +new Date(data[data.length-1].date_time).getMinutes());
+                        data.map((item) => {
+                            dataItem = {x:item.date_time, y:item.temperature1};
+                            data1.push(dataItem);
+                            let nd=new Date(item.date_time).getDate();
+                            console.log('nd',nd);
+                        });
+                        setDataktp1(getKtp1Data(data));
+                        setDataktp2(getKtp2Data(data));
+                        setDataktp3(getKtp3Data(data));
+                        setDataktp4(getKtp4Data(data));
+                    })
+                    .catch(err => {
+                        console.log('---ERROR--2 -',err);
+                    });
             });
 
     }, [setDataktp1]);
