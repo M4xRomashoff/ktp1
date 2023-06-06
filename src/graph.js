@@ -86,8 +86,8 @@ export default  function BuildGraph(){
     useEffect(() => {
         let data1 = [];
         let dataItem = {x:'00:00', y : 20};
-        const apiUrl1 = `http://192.168.60.197:5000/db/get_ktp_all`;
-        const apiUrl2 = `http://localhost:5000/db/get_ktp_all`;
+        const apiUrl2 = `http://192.168.60.197:5000/db/get_ktp_all`;
+        const apiUrl1 = `http://localhost:5000/db/get_ktp_all`;
         //const apiUrl = `http://192.168.0.89:5000/db/get_ktp_all`;
         //const apiUrl = `http://localhost:5000/db/get_ktp_all`;
         //const apiUrl = `http://192.168.0.35:5000/db/get_ktp_all`;
